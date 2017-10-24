@@ -1,0 +1,720 @@
+{%  load static %}
+<!DOCTYPE html>
+<html lang="en" class=" js no-touch">
+<head>
+  <title>Resultados | Agrupamiento</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+  <link rel="stylesheet" type="text/css" href="{% static 'css/font-awesome.min.css' %}">
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans:300,600|Raleway:600,300|Josefin+Slab:400,700,600italic,600,400italic' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" type="text/css" href="{% static 'css/slick-team-slider.css' %}"/>
+  <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+  <link rel="stylesheet" type="text/css" href="" id="codigocss">
+  <!-- =======================================================
+        Theme Name: Tempo
+        Theme URL: https://bootstrapmade.com/tempo-free-onepage-bootstrap-theme/
+        Author: BootstrapMade.com
+        Author URL: https://bootstrapmade.com
+    ======================================================= -->
+</head>
+<body>
+	<!--HEADER START-->
+	<div class="main-navigation navbar-fixed-top">
+		<nav class="navbar navbar-default">
+			<div class="container">
+			<div class="navbar-header">
+			  <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+			    <span class="icon-bar"></span>
+			    <span class="icon-bar"></span>
+			    <span class="icon-bar"></span>
+			  </button>
+			  <a class="navbar-brand" href="/">Agrupar</a>
+			</div>
+			<div class="collapse navbar-collapse" id="myNavbar">
+			  <ul class="nav navbar-nav navbar-right">
+			  	<li class="active"><a href='{% url "recuperar" iddata opsion %}' id="inicio">Actualizar</a></li>
+			    <li><a href="#combinaciones" id="informacion_combinaciones_data">Información</a></li>
+			    <li><a href="#visualizaciones" id="visualizar_comunidades_graficamente">Visualizaciones</a></li>
+			    <li><a href="#visualizaciones" id="formulario_combinacion">Formulario</a></li>
+			    <li><a href='{% url "mensaje_propuesta" iddata %}' id="propuesta">Propuesta</a></li>
+			    <li class="active"><a href="/">Nuevo Archivo</a></li>
+			    <!--<li><a href="#contact">Contact Us</a></li>-->
+			  </ul>
+			</div>
+		  </div>
+		</nav>
+	</div>
+	<!--HEADER END-->
+
+	<!--ESPACIO START-->
+	<div class="section-padding">
+		<div id="combinaciones"></div>
+	</div>
+	<!--ESPACIO END-->
+
+	<!--COMBINACIONES START-->
+	<div class="section-padding">
+		<div class="container">
+			<div class="row">
+				<div class="page-title text-center">
+					<h1>Los 10 mejores resultados<br><b>{{nombre_data}}</b><br><b id="botones_informacion">escenario {{escenario}}</b></h1>
+					<!--<p id="botones_informacion">La información se muestra de dos formas: en tabla y en gráfica.<br>Seleccione la forma que desee visualizar. </p>-->
+					<hr class="pg-titl-bdr-btm"></hr>
+				</div>
+				<div class="port-sec">
+					<div class="col-md-12 fil-btn text-center">
+							<a href="#botones_informacion" class="btn bgblue-dark-blanco" id="tabla">Tabla</a>
+							<a href="#botones_informacion" class="btn bgblue-dark-blanco" id="grafica">Gráfica</a>
+					</div>
+					<div id="Container">
+						<div id="tabla_resultado"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!--COMBINACIONES END-->
+
+	<!--ESPACIO START-->
+	<div class="section-padding">
+		<div></div>
+	</div>
+	<!--ESPACIO END-->
+
+	<!--COMBINACIONES PROPUESTA START-->
+	<div class="section-padding" id="combinaciones_propuestas">
+		<div class="container">
+			<div class="row">
+				<div class="page-title text-center">
+					<h1><b id="botones_informacion_propuesta">Los 10 mejores resultados<br>Propuesta</b></h1>
+					<!--<p id="botones_informacion">La información se muestra de dos formas: en tabla y en gráfica.<br>Seleccione la forma que desee visualizar. </p>-->
+					<hr class="pg-titl-bdr-btm"></hr>
+				</div>
+				<div class="port-sec">
+					<div class="col-md-12 fil-btn text-center">
+							<a href="#botones_informacion_propuesta" class="btn bgblue-dark-blanco" id="tabla_propuesta">Tabla</a>
+							<a href="#botones_informacion_propuesta" class="btn bgblue-dark-blanco" id="grafica_propuesta">Gráfica</a>
+					</div>
+					<div id="Container">
+						<div id="tabla_resultado_propuesta"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!--COMBINACIONES PROPUESTA END-->
+
+	<!--ESPACIO START-->
+	<div class="section-padding">
+		<div id="visualizaciones"></div>
+	</div>
+	<!--ESPACIO END-->
+
+	<!--COMBINACIONES START-->
+	<div class="section-padding">
+		<div class="container">
+			<div class="row">
+				<div class="page-title text-center col-md-12 table-responsive">
+					<h1 id="variables_combinacion"><b>k1</b>=<i>{{k1}}</i>; <b>k2</b>=<i>{{k2}}</i>; <b>umbral1</b>=<i>{{umbral1}}</i> y <b>umbral2</b>=<i>{{umbral2}}</i><br><b>cohesión</b>=<i>{{cohesion}}</i><br><b>Separación</b>=<i id="visualizacion_combinacion">{{separacion}}</i></h1>
+					<!--<p id="texto_visualizacion">Las comunidades se pueden visualizar en circulos o en arbol.<br>Seleccione la forma que desee visualizar. </p>-->
+					<p id="texto_visualizacion"></p>
+					<hr class="pg-titl-bdr-btm"></hr>
+				</div>
+				<div class="port-sec">
+					<div class="col-md-12 fil-btn text-center">
+							<a href="#visualizacion_combinacion" class="btn bgblue-dark-blanco" id="circulo">Circulos</a>
+							<a href="#visualizacion_combinacion" class="btn bgblue-dark-blanco" id="arbol">Arbol</a>
+							<a href="#visualizacion_combinacion" class="btn bgblue-dark-blanco" id="arbol_radial">Arbol Radial</a>
+							<a href='{% url "ver_grupos_individuos" idCombinacion %}' class="btn bgblue-dark-blanco" id="ver_individuos" target="_blank">Ver individuos</a>
+							<a href='{% url "reporte_pdf" idCombinacion %}' class="btn bgblue-dark-blanco" id="imprimir">Descargar</a>
+					</div>
+					<div id="Container">
+						<center>
+						<div id="grafica_resultado" class="col-md-12 table-responsive">
+						</div>
+						<p id="lista_seudonimos">
+							{% for p in lista_seudonimos %}
+		        				<b>{{p.seudonimo}}</b>=<i>{{p.individuo}}</i> ........ 
+							{% endfor %}
+						</p>
+						</center>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!--COMBINACIONES END-->
+
+	<!--FOOTER START-->
+	<footer class="footer section-padding">
+		<div class="container">
+			<div class="row">
+				<div style="visibility: visible; animation-name: zoomIn;" class="col-sm-12 text-center wow zoomIn">
+					<h3>Follow us on </h3>
+					<div class="footer_social">
+						<ul>
+							<li><a class="f_facebook" href="https://www.facebook.com/" target="_blank"><i class="fa fa-facebook"></i></a></li>
+							<li><a class="f_twitter" href="https://twitter.com/?lang=es" target="_blank"><i class="fa fa-twitter"></i></a></li>
+							<li><a class="f_google" href="https://www.google.com.ec/?gfe_rd=cr&ei=i1WbWfmuIcTI8Ae3rZuQCQ" target="_blank"><i class="fa fa-google-plus"></i></a></li>
+							<li><a class="f_linkedin" href="https://ec.linkedin.com/" target="_blank"><i class="fa fa-linkedin"></i></a></li>
+						</ul>
+					</div>																
+				</div><!--- END COL -->
+			</div><!--- END ROW -->
+		</div><!--- END CONTAINER -->
+	</footer>
+	<!--FOOTER END-->
+	<div class="footer-bottom">
+		<div class="container">
+			<div style="visibility: visible; animation-name: zoomIn;" class="col-md-12 text-center wow zoomIn">
+				<div class="footer_copyright">
+					<p> © Copyright, All Rights Reserved.</p>					
+					<div class="credits">
+                        <!-- 
+                            All the links in the footer should remain intact. 
+                            You can delete the links only if you purchased the pro version.
+                            Licensing information: https://bootstrapmade.com/license/
+                            Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/buy/?theme=Tempo
+                        -->
+                        Designed by <a href="https://bootstrapmade.com/" target="_blank">Bootstrap Themes</a>
+                    </div>
+				</div>
+			</div>
+		</div>
+	</div>
+  	<script src="{% static 'js/jquery.min.js' %}" id="jqueryjs"></script>
+  	<!--<script src="{% static 'js/jquery-1.10.2.min.js' %}" id="jqueryjs"></script>-->
+  	<script src="{% static 'js/jquery.easing.min.js' %}"></script>
+  	<script src="{% static 'js/bootstrap.min.js' %}"></script>
+  	<script src="{% static 'js/jquery.mixitup.js' %}" type="text/javascript"></script>
+	<script type="text/javascript" src="{% static 'js/slick.min.js' %}"></script>
+	<script type="text/javascript" src="{% static 'js/custom.js' %}"></script>
+	<script type="text/javascript" src="{% static 'js/highcharts.js' %}"></script>
+	<script type="text/javascript" src="{% static 'js/exporting.js' %}"></script>
+    <!--<script src="{% static 'contactform/contactform.js' %}"></script>-->
+    <script src="{% static 'js/d3_v4_min.js' %}" id="circulojs"></script>
+    <!--<script type="text/javascript" id="codigod3" src=""></script>
+    <script type="text/javascript" id="codigojquery" src=""></script>-->
+    <!--<script src="{% static 'js/d3.v3.min.js' %}" id="arboljs"></script>-->
+    <script type="text/javascript">
+    	$(document).ready(function(){
+
+            // indicamos que se ejecuta la función a los 5 segundos de haberse
+            // cargado la pagina
+            setTimeout(clickbutton,0.0);
+ 
+            function clickbutton()
+            {
+                // simulamos el click del mouse en el boton del formulario
+                $("#tabla").click();
+                $("#circulo").click();
+                var formulario='{{formulario}}';
+                var propuesta='{{propuesta}}';
+                if (propuesta == 'False'){
+	                var elemento = document.getElementById("combinaciones_propuestas");
+		   			elemento.style.display = 'none';
+		   		}else{
+		   			$("#tabla_propuesta").click();
+		   			var elemento = document.getElementById("combinaciones_propuestas");
+	   				elemento.style.display = '';
+		   		}
+                if (formulario == 'True'){
+                	$("#visualizar_comunidades_graficamente").click();
+                }else{
+                	$("#informacion_combinaciones_data").click();
+                }
+            }
+        });
+    	function MostrarValor(elemento){
+    		var elemento7 = document.getElementById("grafica_resultado");
+	   		elemento7.style.display = 'none';
+	   		var texto='Por favor espere unos segundos...'
+	   		document.getElementById("lista_seudonimos").innerHTML = texto;
+    		var id_combinacion=elemento.getAttribute("value");
+    		//alert(elemento)
+    		$.ajax({
+                method:"post",
+                url: '{% url "comunidadesCombinacion" %}',
+                data: {
+                   	//'valor': $('#id_startTime').val(),
+                    'id_combinacion': id_combinacion,
+                },
+                //beforeSend:function() {},
+                success:function(data){
+                	var elemento = document.getElementById("circulo");
+	   				elemento.style.display = '';
+	   				var elemento1 = document.getElementById("arbol");
+	   				elemento1.style.display = '';
+	   				var elemento2 = document.getElementById("arbol_radial");
+	   				elemento2.style.display = '';
+	   				var elemento4 = document.getElementById("imprimir");
+	   				elemento4.style.display = '';
+	   				var elemento6 = document.getElementById("ver_individuos");
+	   				elemento6.style.display = '';
+                	//alert(data.mensaje);
+                	var url="/reporte_pdf/"+id_combinacion+"/";
+                	var d1 = document.getElementById("imprimir"); 
+					d1.setAttribute("href", url);
+
+					var url1="/ver_grupos_individuos/"+id_combinacion+"/";
+                	var d2 = document.getElementById("ver_individuos"); 
+					d2.setAttribute("href", url1);
+
+                	var obj = jQuery.parseJSON(data.consulta);
+                	for(i=0; i<obj.length; i++){
+                        //console.log(obj[i]);
+                        var texto="<b>k1</b>=<i>"+obj[i].k1+"</i>; <b>k2</b>=<i>"+obj[i].k2+"</i>; <b>umbral1</b>=<i>"+obj[i].umbral1+"</i> y <b>umbral2</b>=<i>"+obj[i].umbral2+"</i><br><b>cohesión</b>=<i>"+obj[i].cohesion+"</i><br><b>separación</b>=<i id='visualizacion_combinacion'>"+obj[i].separacion+"</i>";
+                    }
+                    document.getElementById("variables_combinacion").innerHTML = texto;
+
+                    var ob = jQuery.parseJSON(data.seudonimo);
+                    //console.log(ob)
+                    var cadena='';
+                	for(i=0; i<ob.length; i++){
+                        //console.log(ob[i]);
+                        var texto="<b>"+ob[i].seudonimo+"</b>=<i>"+ob[i].individuo+"</i> ........ ";
+                        cadena=cadena+texto;
+                    }
+                    //console.log(cadena)
+                    document.getElementById("lista_seudonimos").innerHTML = cadena;
+                	//console.log(ob)
+                	//document.getElementById("texto_visualizacion").innerHTML = 'Las comunidades se pueden visualizar en circulos o en arbol.<br>Seleccione la forma que desee visualizar.';
+	   				var elemento3 = document.getElementById("visualizar_comunidades_graficamente");
+	   				elemento3.style.display = '';
+	   				var elemento5 = document.getElementById("texto_visualizacion");
+	   				elemento5.style.display = 'none';
+	   				var elemento7 = document.getElementById("grafica_resultado");
+	   				elemento7.style.display = '';
+	   				$(document).ready(function(){
+			            // indicamos que se ejecuta la función a los 0 segundos de haberse
+			            // cargado la pagina
+			            setTimeout(clickbutton,0.0);
+			            function clickbutton()
+			            {
+			                // simulamos el click del mouse en el boton del formulario
+			                //$("#tabla").click();
+			                $("#circulo").click();
+			                //$("#visualizar_comunidades_graficamente").click();
+			            }
+			        });
+                }
+            });
+		}
+		jQuery(document).ready(function ($) {
+	        $('#tabla').click(function(){
+	        	cadena_html='<div class="col-md-12 table-responsive">';
+	        	cadena_html=cadena_html+'<table class="table table-striped" id="example" class="table table-striped table-bordered display" cellspacing="0" width="100%">';
+	        	cadena_html=cadena_html+'<thead>';
+	        	cadena_html=cadena_html+'<tr>';
+	        	cadena_html=cadena_html+'<th>Individuos</th>';
+	        	cadena_html=cadena_html+'<th>Comunidades iniciales</th>';
+	        	cadena_html=cadena_html+'<th>K1</th>';
+	        	cadena_html=cadena_html+'<th>K2</th>';
+	        	cadena_html=cadena_html+'<th>Umbral1</th>';
+	        	cadena_html=cadena_html+'<th>Umbral2</th>';
+	        	cadena_html=cadena_html+'<th>Cohesión</th>';
+	        	cadena_html=cadena_html+'<th>Separación</th>';
+	        	cadena_html=cadena_html+'<th>Comunidades finales</th>';
+	        	cadena_html=cadena_html+'<th>Visualizar</th>';
+	        	cadena_html=cadena_html+'</tr>';
+	        	cadena_html=cadena_html+'</thead>';
+	        	cadena_html=cadena_html+'<tbody class="searchable">';
+	        	{% for p in lista %}
+	        		cadena_html=cadena_html+'<tr>';
+	        		cadena_html=cadena_html+'<td>{{p.individuos}}</td>';
+	        		cadena_html=cadena_html+'<td>{{p.comunidades_iniciales}}</td>';
+	        		cadena_html=cadena_html+'<td>{{p.k1}}</td>';
+	        		cadena_html=cadena_html+'<td>{{p.k2}}</td>';
+	        		cadena_html=cadena_html+'<td>{{p.umbral1}}</td>';
+	        		cadena_html=cadena_html+'<td>{{p.umbral2}}</td>';
+	        		cadena_html=cadena_html+'<td>{{p.cohesion}}</td>';
+	        		cadena_html=cadena_html+'<td>{{p.separacion}}</td>';
+	        		cadena_html=cadena_html+'<td>{{p.numero_comunidades_finales}}</td>';
+	        		cadena_html=cadena_html+'<td><a href="#visualizaciones" class="tabla" id="seleccionador" value="{{p.idcombinaciones}}" onclick="MostrarValor(this);">Ver</a></td>';
+	        		cadena_html=cadena_html+'</tr>';
+	        	{% endfor %}
+	        	cadena_html=cadena_html+'</tbody>';
+	        	cadena_html=cadena_html+'</table>';
+	        	cadena_html=cadena_html+'</div>';
+	        	$('#tabla_resultado').html(cadena_html);
+	        });
+	        $('#tabla_propuesta').click(function(){
+	        	cadena_html='<div class="col-md-12 table-responsive">';
+	        	cadena_html=cadena_html+'<table class="table table-striped" id="example" class="table table-striped table-bordered display" cellspacing="0" width="100%">';
+	        	cadena_html=cadena_html+'<thead>';
+	        	cadena_html=cadena_html+'<tr>';
+	        	cadena_html=cadena_html+'<th>Individuos</th>';
+	        	cadena_html=cadena_html+'<th>Comunidades iniciales</th>';
+	        	cadena_html=cadena_html+'<th>K1</th>';
+	        	cadena_html=cadena_html+'<th>K2</th>';
+	        	cadena_html=cadena_html+'<th>Umbral1</th>';
+	        	cadena_html=cadena_html+'<th>Umbral2</th>';
+	        	cadena_html=cadena_html+'<th>Cohesión</th>';
+	        	cadena_html=cadena_html+'<th>Separación</th>';
+	        	cadena_html=cadena_html+'<th>Comunidades finales</th>';
+	        	cadena_html=cadena_html+'<th>Visualizar</th>';
+	        	cadena_html=cadena_html+'</tr>';
+	        	cadena_html=cadena_html+'</thead>';
+	        	cadena_html=cadena_html+'<tbody class="searchable">';
+	        	{% for p in lista_propuesta %}
+	        		cadena_html=cadena_html+'<tr>';
+	        		cadena_html=cadena_html+'<td>{{p.individuos}}</td>';
+	        		cadena_html=cadena_html+'<td>{{p.comunidades_iniciales}}</td>';
+	        		cadena_html=cadena_html+'<td>{{p.k1}}</td>';
+	        		cadena_html=cadena_html+'<td>{{p.k2}}</td>';
+	        		cadena_html=cadena_html+'<td>{{p.umbral1}}</td>';
+	        		cadena_html=cadena_html+'<td>{{p.umbral2}}</td>';
+	        		cadena_html=cadena_html+'<td>{{p.cohesion}}</td>';
+	        		cadena_html=cadena_html+'<td>{{p.separacion}}</td>';
+	        		cadena_html=cadena_html+'<td>{{p.numero_comunidades_finales}}</td>';
+	        		cadena_html=cadena_html+'<td><a href="#visualizaciones" class="tabla" id="seleccionador" value="{{p.idcombinaciones}}" onclick="MostrarValor(this);">Ver</a></td>';
+	        		cadena_html=cadena_html+'</tr>';
+	        	{% endfor %}
+	        	cadena_html=cadena_html+'</tbody>';
+	        	cadena_html=cadena_html+'</table>';
+	        	cadena_html=cadena_html+'</div>';
+	        	$('#tabla_resultado_propuesta').html(cadena_html);
+	        });
+	        $('#grafica').click(function(){
+	        	cadena_html='<div class="col-md-12 table-responsive" id="grafica_combinaciones">';
+	        	cadena_html=cadena_html+'</div>';
+	        	cadena_html=cadena_html+'<div class="col-md-12 table-responsive" id="visualizar_combinaciones">';
+	        	{% for p in lista %}
+	        		cadena_html=cadena_html+'<a href="#visualizaciones" class="tabla href_visualizar" id="seleccionador" value="{{p.idcombinaciones}}" onclick="MostrarValor(this);">Ver{{p.numero_comunidades_finales}}</a>';
+	        	{% endfor %}
+	        	cadena_html=cadena_html+'</div>';
+	        	$('#tabla_resultado').html(cadena_html);
+	        	$(function () {
+				    $('#grafica_combinaciones').highcharts({
+				        title: {
+				            text: 'Métricas de evaluación de agrupamientos',
+				            x: -20 //center
+				        },
+				        subtitle: {
+				            text: '(Cohesión y Separación)',
+				            x: -20
+				        },
+				        xAxis: {
+				            categories: [
+				            {% for p in lista %}
+				            '{{p.numero_comunidades_finales}} comunidades', 
+				            {% endfor %}
+				            ]
+				        },
+				        yAxis: {
+				            title: {
+				                text: 'Valor de las métricas'
+				            },
+				            plotLines: [{
+				                value: 0,
+				                width: 1,
+				                color: '#808080'
+				            }]
+				        },
+				        tooltip: {
+				            valueSuffix: ''
+				        },
+				        legend: {
+				            layout: 'vertical',
+				            align: 'right',
+				            verticalAlign: 'middle',
+				            borderWidth: 0
+				        },
+				        series: [{
+				            name: 'Cohesión',
+				            data: [
+				            {% for p in lista %}
+				            {{p.cohesion}},
+				            {% endfor %}
+				            ]
+				        }, {
+				            name: 'Separación',
+				            data: [
+				            {% for p in lista %}
+				            {{p.separacion}},
+				            {% endfor %}
+				            ]
+				        }]
+				    });
+				});
+	        });
+	        $('#grafica_propuesta').click(function(){
+	        	cadena_html='<div class="col-md-12 table-responsive" id="grafica_combinaciones_propuesta">';
+	        	cadena_html=cadena_html+'</div>';
+	        	cadena_html=cadena_html+'<div class="col-md-12 table-responsive" id="visualizar_combinaciones">';
+	        	{% for p in lista_propuesta %}
+	        		cadena_html=cadena_html+'<a href="#visualizaciones" class="tabla href_visualizar" id="seleccionador" value="{{p.idcombinaciones}}" onclick="MostrarValor(this);">Ver{{p.numero_comunidades_finales}}</a>';
+	        	{% endfor %}
+	        	cadena_html=cadena_html+'</div>';
+	        	$('#tabla_resultado_propuesta').html(cadena_html);
+	        	$(function () {
+				    $('#grafica_combinaciones_propuesta').highcharts({
+				        title: {
+				            text: 'Métricas de evaluación de agrupamientos',
+				            x: -20 //center
+				        },
+				        subtitle: {
+				            text: '(Cohesión y Separación)',
+				            x: -20
+				        },
+				        xAxis: {
+				            categories: [
+				            {% for p in lista_propuesta %}
+				            '{{p.numero_comunidades_finales}} comunidades', 
+				            {% endfor %}
+				            ]
+				        },
+				        yAxis: {
+				            title: {
+				                text: 'Valor de las métricas'
+				            },
+				            plotLines: [{
+				                value: 0,
+				                width: 1,
+				                color: '#808080'
+				            }]
+				        },
+				        tooltip: {
+				            valueSuffix: ''
+				        },
+				        legend: {
+				            layout: 'vertical',
+				            align: 'right',
+				            verticalAlign: 'middle',
+				            borderWidth: 0
+				        },
+				        series: [{
+				            name: 'Cohesión',
+				            data: [
+				            {% for p in lista_propuesta %}
+				            {{p.cohesion}},
+				            {% endfor %}
+				            ]
+				        }, {
+				            name: 'Separación',
+				            data: [
+				            {% for p in lista_propuesta %}
+				            {{p.separacion}},
+				            {% endfor %}
+				            ]
+				        }]
+				    });
+				});
+	        });
+	        $('#circulo').click(function(){
+	        	var elemento2 = document.getElementById("lista_seudonimos");
+   				elemento2.style.display = '';
+	        	//function include(file_path){
+				//	var j = document.createElement("script");
+				//	j.type = "text/javascript";
+				//	j.src = file_path;
+				//	document.body.appendChild(j);
+				//}
+				//codigo=importarScript("{% static 'js/d3_v4_min.js' %}");
+				//$.ajax
+			    //(
+			    //	{
+			    //    	url : "{% static 'js/d3_v4_min.js' %}",
+				//		dataType: "text",
+				//		success : function (data) 
+				//		{
+			            	//$(".text").html("<pre>"+data+"</pre>");
+			    //        	$('#codigojs').html(data);
+				//		}
+				//	}
+				//);
+				//include("{% static 'js/d3_v4_min.js' %}");
+	        	cadena_html='<svg width="960" height="960" id="resultados_circulos"></svg>';
+	        	$('#grafica_resultado').html(cadena_html);
+	        	//var d1 = document.getElementById("codigocss"); 
+				//d1.setAttribute("href", "{% static 'css/arbol.css' %}");
+				//location.reload();
+    			//var elemento = document.getElementById("arboljs");
+   				//elemento.style.display = 'none';
+	        	var svg = d3.select("#resultados_circulos"),
+				    diameter = +svg.attr("width"),
+				    g = svg.append("g").attr("transform", "translate(2,2)"),
+				    format = d3.format(",d");
+
+				var pack = d3.pack()
+				    .size([diameter - 4, diameter - 4]);
+
+	        	d3.json("{% static 'json/datos.json' %}", function(error, root) {
+					if (error) throw error;
+				  	//alert(root) http://127.0.0.1:8000/datos.json
+
+				root = d3.hierarchy(root)
+				    .sum(function(d) { return d.size; })
+				    .sort(function(a, b) { return b.value - a.value; });
+
+				var node = g.selectAll(".node")
+					.data(pack(root).descendants())
+					.enter().append("g")
+					.attr("class", function(d) { return d.children ? "node" : "leaf node"; })
+					.attr("transform", function(d) { return "translate(" + d.x + "," + d.y + ")"; });
+
+				node.append("title")
+				    .text(function(d) { return d.data.name; });
+				    //text(function(d) { return d.data.name + "\n" + format(d.value); })
+
+				node.append("circle")
+				    .attr("r", function(d) { return d.r; });
+
+				node.filter(function(d) { return !d.children; }).append("text")
+				    .attr("dy", "0.3em")
+				    .text(function(d) { return d.data.name.substring(0, d.r / 3); });
+				});
+	        });
+	        $('#formulario_combinacion').click(function(){
+	        	//var h = "{{seccion}}";
+	        	//alert(h);
+	        	document.getElementById("variables_combinacion").innerHTML = 'Formulario';
+	        	document.getElementById("lista_seudonimos").innerHTML = '';
+	        	document.getElementById("texto_visualizacion").innerHTML = 'Por favor ingrese los valores de cada variable.<br>Para ejecutar una combinación específica';
+	        	var elemento = document.getElementById("circulo");
+   				elemento.style.display = 'none';
+   				var elemento1 = document.getElementById("arbol");
+   				elemento1.style.display = 'none';
+   				var elemento2 = document.getElementById("visualizar_comunidades_graficamente");
+   				elemento2.style.display = 'none';
+   				var elemento3 = document.getElementById("texto_visualizacion");
+	   			elemento3.style.display = '';
+	   			var elemento4 = document.getElementById("arbol_radial");
+	   			elemento4.style.display = 'none';
+	   			var elemento5 = document.getElementById("imprimir");
+	   			elemento5.style.display = 'none';
+	   			var elemento6 = document.getElementById("ver_individuos");
+	   			elemento6.style.display = 'none';
+   				formulario='<div class="form-sec">';
+   				formulario=formulario+'<form action="{% url "ejecutar_combinacion" iddata %}" method="post" role="form" class="contactForm">'+"{% csrf_token %}";
+   				formulario=formulario+'<div class="col-md-4 form-group">';
+   				formulario=formulario+'<input type="number" name="k1" class="form-control text-field-box" id="k1" placeholder="Ingrese el valor para k1" min="0.1" max="0.9" step="0.00001" required/>';
+   				formulario=formulario+'<div class="validation"></div>';
+   				formulario=formulario+'</div>';
+   				formulario=formulario+'<div class="col-md-4 form-group">';
+   				formulario=formulario+'<input type="number" class="form-control text-field-box" name="k2" id="k2" placeholder="Ingrese el valor para k2" min="0.1" max="0.9" step="0.00001" required/>';
+   				formulario=formulario+'<div class="validation"></div>';
+   				formulario=formulario+'</div>';
+   				formulario=formulario+'<div class="col-md-4 form-group">';
+   				formulario=formulario+'<input type="number" class="form-control text-field-box" name="umbral1" id="umbral1" placeholder="Ingrese el valor para umbral1" min="0.1" max="0.9" step="0.00001" required/>';
+   				formulario=formulario+'<div class="validation"></div>';
+   				formulario=formulario+'</div>';
+   				formulario=formulario+'<div class="col-md-4 form-group">';
+   				formulario=formulario+'<input type="number" class="form-control text-field-box" name="umbral2" id="umbral2" placeholder="Ingrese el valor para umbral2" min="0.1" max="0.9" step="0.00001" required/>';
+   				formulario=formulario+'<div class="validation"></div>';
+   				formulario=formulario+'</div>';
+   				formulario=formulario+'<div class="col-md-12 form-group">';
+   				formulario=formulario+'<button class="button-medium" id="contact-submit" type="submit" name="contact">Ejecutar</button>';
+   				formulario=formulario+'</div>';
+   				formulario=formulario+'</form>';
+   				formulario=formulario+'</div>';
+   				document.getElementById("grafica_resultado").innerHTML = formulario;
+	        });
+	        $('#arbol').click(function(){
+	        	var elemento2 = document.getElementById("lista_seudonimos");
+   				elemento2.style.display = 'none';
+	        	cadena_html='<svg width="960" height="2000" id="grafiaca_de_arbol"></svg>';
+	        	$('#grafica_resultado').html(cadena_html);
+	        	var svg = d3.select("#grafiaca_de_arbol"),
+				    width = +svg.attr("width"),
+				    height = +svg.attr("height"),
+				    g = svg.append("g").attr("transform", "translate(40,0)");
+
+				var tree = d3.cluster()
+				    .size([height, width - 160]);
+
+				var stratify = d3.stratify()
+				    .parentId(function(d) { return d.id.substring(0, d.id.lastIndexOf(".")); });
+
+				d3.csv("{% static 'csv/flare.csv' %}", function(error, data) {
+				  if (error) throw error;
+
+				  var root = stratify(data)
+				      .sort(function(a, b) { return (a.height - b.height) || a.id.localeCompare(b.id); });
+
+				  tree(root);
+
+				  var link = g.selectAll(".link")
+				      .data(root.descendants().slice(1))
+				    .enter().append("path")
+				      .attr("class", "link")
+				      .attr("d", function(d) {
+				        return "M" + d.y + "," + d.x
+				            + "C" + (d.parent.y + 100) + "," + d.x
+				            + " " + (d.parent.y + 100) + "," + d.parent.x
+				            + " " + d.parent.y + "," + d.parent.x;
+				      });
+
+				  var node = g.selectAll(".node")
+				      .data(root.descendants())
+				    .enter().append("g")
+				      .attr("class", function(d) { return "node" + (d.children ? " node--internal" : " node--leaf"); })
+				      .attr("transform", function(d) { return "translate(" + d.y + "," + d.x + ")"; })
+
+				  node.append("circle")
+				      .attr("r", 2.5);
+
+				  node.append("text")
+				      .attr("dy", 3)
+				      .attr("x", function(d) { return d.children ? -8 : 8; })
+				      .style("text-anchor", function(d) { return d.children ? "end" : "start"; })
+				      .text(function(d) { return d.id.substring(d.id.lastIndexOf(".") + 1); });
+				});
+	        });
+	        $('#arbol_radial').click(function(){
+	        	var elemento2 = document.getElementById("lista_seudonimos");
+   				elemento2.style.display = 'none';
+	        	cadena_html='<svg width="1200" height="1300" id="grafica_arbol_radial"></svg>';
+	        	$('#grafica_resultado').html(cadena_html);
+	        	var svg = d3.select("#grafica_arbol_radial"),
+				    width = +svg.attr("width"),
+				    height = +svg.attr("height"),
+				    g = svg.append("g").attr("transform", "translate(" + (width / 2 + 40) + "," + (height / 2 + 90) + ")");
+
+				var stratify = d3.stratify()
+				    .parentId(function(d) { return d.id.substring(0, d.id.lastIndexOf(".")); });
+
+				var tree = d3.tree()
+				    .size([2 * Math.PI, 500])
+				    .separation(function(a, b) { return (a.parent == b.parent ? 1 : 2) / a.depth; });
+
+				d3.csv("{% static 'csv/flare.csv' %}", function(error, data) {
+				  if (error) throw error;
+
+				  var root = tree(stratify(data));
+
+				  var link = g.selectAll(".link")
+				    .data(root.links())
+				    .enter().append("path")
+				      .attr("class", "link")
+				      .attr("d", d3.linkRadial()
+				          .angle(function(d) { return d.x; })
+				          .radius(function(d) { return d.y; }));
+
+				  var node = g.selectAll(".node")
+				    .data(root.descendants())
+				    .enter().append("g")
+				      .attr("class", function(d) { return "node" + (d.children ? " node--internal" : " node--leaf"); })
+				      .attr("transform", function(d) { return "translate(" + radialPoint(d.x, d.y) + ")"; });
+
+				  node.append("circle")
+				      .attr("r", 2.5);
+
+				  node.append("text")
+				      .attr("dy", "0.31em")
+				      .attr("x", function(d) { return d.x < Math.PI === !d.children ? 6 : -6; })
+				      .attr("text-anchor", function(d) { return d.x < Math.PI === !d.children ? "start" : "end"; })
+				      .attr("transform", function(d) { return "rotate(" + (d.x < Math.PI ? d.x - Math.PI / 2 : d.x + Math.PI / 2) * 180 / Math.PI + ")"; })
+				      .text(function(d) { return d.id.substring(d.id.lastIndexOf(".") + 1); });
+				});
+
+				function radialPoint(x, y) {
+				  return [(y = +y) * Math.cos(x -= Math.PI / 2), y * Math.sin(x)];
+				}
+	        });
+	    });
+	</script>
+    
+</body>
+</html>
