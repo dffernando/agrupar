@@ -1,0 +1,32 @@
+circle 
+{
+  fill: rgb(31, 119, 180);
+  fill-opacity: .25;
+  stroke: rgb(31, 119, 180);
+  stroke-width: 1px;
+}
+
+.leaf circle 
+{
+  fill: #ff7f0e;
+  fill-opacity: 1;
+}
+
+.grafica_de_circulos text 
+{
+  font: 10px sans-serif;
+  text-anchor: middle;
+}
+
+.white
+{
+	color:#fff !important;
+}
+h1.cta-title
+{
+	font-size: 43px;
+}
+h1
+{
+	font-size: 36px;
+}

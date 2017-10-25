@@ -1,0 +1,165 @@
+{
+"name": "comunidades",
+"children": [
+{
+"name": "comunidad0",
+"children": [
+{"name": "I0", "size": 800}
+]
+},
+{
+"name": "comunidad1",
+"children": [
+{"name": "I1", "size": 800},
+{"name": "I2", "size": 800}
+]
+},
+{
+"name": "comunidad2",
+"children": [
+{"name": "I3", "size": 800}
+]
+},
+{
+"name": "comunidad3",
+"children": [
+{"name": "I4", "size": 800}
+]
+},
+{
+"name": "comunidad4",
+"children": [
+{"name": "I5", "size": 800}
+]
+},
+{
+"name": "comunidad5",
+"children": [
+{"name": "I6", "size": 800}
+]
+},
+{
+"name": "comunidad6",
+"children": [
+{"name": "I7", "size": 800}
+]
+},
+{
+"name": "comunidad7",
+"children": [
+{"name": "I8", "size": 800}
+]
+},
+{
+"name": "comunidad8",
+"children": [
+{"name": "I9", "size": 800}
+]
+},
+{
+"name": "comunidad9",
+"children": [
+{"name": "I10", "size": 800}
+]
+},
+{
+"name": "comunidad10",
+"children": [
+{"name": "I11", "size": 800},
+{"name": "I12", "size": 800},
+{"name": "I13", "size": 800}
+]
+},
+{
+"name": "comunidad11",
+"children": [
+{"name": "I14", "size": 800}
+]
+},
+{
+"name": "comunidad12",
+"children": [
+{"name": "I15", "size": 800}
+]
+},
+{
+"name": "comunidad13",
+"children": [
+{"name": "I16", "size": 800}
+]
+},
+{
+"name": "comunidad14",
+"children": [
+{"name": "I17", "size": 800}
+]
+},
+{
+"name": "comunidad15",
+"children": [
+{"name": "I18", "size": 800}
+]
+},
+{
+"name": "comunidad16",
+"children": [
+{"name": "I19", "size": 800}
+]
+},
+{
+"name": "comunidad17",
+"children": [
+{"name": "I20", "size": 800},
+{"name": "I21", "size": 800}
+]
+},
+{
+"name": "comunidad18",
+"children": [
+{"name": "I22", "size": 800}
+]
+},
+{
+"name": "comunidad19",
+"children": [
+{"name": "I23", "size": 800}
+]
+},
+{
+"name": "comunidad20",
+"children": [
+{"name": "I24", "size": 800}
+]
+},
+{
+"name": "comunidad21",
+"children": [
+{"name": "I25", "size": 800}
+]
+},
+{
+"name": "comunidad22",
+"children": [
+{"name": "I26", "size": 800}
+]
+},
+{
+"name": "comunidad23",
+"children": [
+{"name": "I27", "size": 800}
+]
+},
+{
+"name": "comunidad24",
+"children": [
+{"name": "I28", "size": 800}
+]
+},
+{
+"name": "comunidad25",
+"children": [
+{"name": "I29", "size": 800}
+]
+}
+]
+}
