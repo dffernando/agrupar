@@ -26,7 +26,7 @@ SECRET_KEY = '_k8yjfbv7w0m1(-^8ks@+4iw4o8)0ddjrvc7-(7$t1i#6@ck3m'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -115,4 +115,5 @@ STATIC_URL = '/static/'
 STATIC_ROOT = 'staticfiles'
 STATICFILES_DIRS=(
     os.path.join(BASE_DIR, 'static/'),
+	'algoritmo/templates',
     )
