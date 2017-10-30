@@ -11,75 +11,89 @@
 {
 "name": "comunidad1",
 "children": [
-{"name": "I2", "size": 800}
+{"name": "I2", "size": 800},
+{"name": "I3", "size": 800},
+{"name": "I4", "size": 800}
 ]
 },
 {
 "name": "comunidad2",
 "children": [
-{"name": "I3", "size": 800}
+{"name": "I5", "size": 800}
 ]
 },
 {
 "name": "comunidad3",
 "children": [
-{"name": "I4", "size": 800}
+{"name": "I6", "size": 800},
+{"name": "I7", "size": 800},
+{"name": "I8", "size": 800}
 ]
 },
 {
 "name": "comunidad4",
 "children": [
-{"name": "I5", "size": 800}
+{"name": "I9", "size": 800}
 ]
 },
 {
 "name": "comunidad5",
 "children": [
-{"name": "I6", "size": 800}
+{"name": "I10", "size": 800}
 ]
 },
 {
 "name": "comunidad6",
 "children": [
-{"name": "I7", "size": 800}
+{"name": "I11", "size": 800},
+{"name": "I12", "size": 800}
 ]
 },
 {
 "name": "comunidad7",
 "children": [
-{"name": "I8", "size": 800}
+{"name": "I13", "size": 800}
 ]
 },
 {
 "name": "comunidad8",
 "children": [
-{"name": "I9", "size": 800}
+{"name": "I14", "size": 800},
+{"name": "I15", "size": 800}
 ]
 },
 {
 "name": "comunidad9",
 "children": [
-{"name": "I10", "size": 800}
+{"name": "I16", "size": 800},
+{"name": "I17", "size": 800}
 ]
 },
 {
 "name": "comunidad10",
 "children": [
-{"name": "I11", "size": 800}
+{"name": "I18", "size": 800},
+{"name": "I19", "size": 800},
+{"name": "I20", "size": 800}
 ]
 },
 {
 "name": "comunidad11",
 "children": [
-{"name": "I12", "size": 800},
-{"name": "I13", "size": 800}
+{"name": "I21", "size": 800},
+{"name": "I22", "size": 800}
 ]
 },
 {
 "name": "comunidad12",
 "children": [
-{"name": "I14", "size": 800},
-{"name": "I15", "size": 800}
+{"name": "I23", "size": 800},
+{"name": "I24", "size": 800},
+{"name": "I25", "size": 800},
+{"name": "I26", "size": 800},
+{"name": "I27", "size": 800},
+{"name": "I28", "size": 800},
+{"name": "I29", "size": 800}
 ]
 }
 ]
